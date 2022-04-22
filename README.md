@@ -1,6 +1,7 @@
 ## Cloning printf function
->
-> - ### Algorithm
+
+### Algorithm
+
 > - 1. START
 > - 2. GET string in main.c
 > - 3. LOOP through until NULL terminator
@@ -10,3 +11,5 @@
 > - 7. Print string to stdout.
 > - 8. RETURN number of characters printed.
 > - 9. END.
+
+### Flowchart
