@@ -10,8 +10,7 @@ int (*get_sp_func(const char *s, int index))(va_list, char *, unsigned int)
 	print_t pr[] = {
 		{"c", print_c}, {"s", print_s}
 	};
-	
-	int i = 0, j = 0, get_index;
+           int i = 0, j = 0, get_index;
 
 	get_index = index;
 	while (pr[i].type_sp)
