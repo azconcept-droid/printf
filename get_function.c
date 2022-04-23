@@ -30,5 +30,5 @@ int (*get_sp_func(const char *arg_i, int index))(va_list, char *, unsigned int)
 			index = first_index;
 		}
 	}
-	return (pr[j].f);
+	return (sp[j].f);
 }

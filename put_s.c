@@ -8,18 +8,18 @@
  */
 int print_s(va_list ap, char *buf, unsigned int i_buf)
 {
-	char *s;
+	char *string;
 	unsigned int i;
 	char nill[] = "(null)";
 
-	s = va_arg(ap, char *);
-	if (s == NULL)
+	string = va_arg(ap, char *);
+	if (string == NULL)
 	{
 		for (i = 0; nill[i]; i++)
 			i_buf = control_buf(buf, nill[i], i_buf);
 		return (6);
 	}
-	for (i = 0; s[i]; i++)
-		i_buf = control_buf(buf, s[i], i_buf);
+	for (i = 0; string[i]; i++)
+		i_buf = control_buf(buf, string[i], i_buf);
 	return (i);
 }
