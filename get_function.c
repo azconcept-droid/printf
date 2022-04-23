@@ -1,34 +1,34 @@
 #include "main.h"
 /**
  * get_sp_func - selects the correct function to perform the operation.
- * @s: argument indentifier
+ * @arg_i: argument indentifier
  * @index: index for argument indentifier
  * Return: pointer to a function.
  */
-int (*get_sp_func(const char *s, int index))(va_list, char *, unsigned int)
+int (*get_sp_func(const char *arg_i, int index))(va_list, char *, unsigned int)
 {
-	print_t pr[] = {
-		{"c", print_c}, {"s", print_s}
+	specifier_f sp[] = {
+		{"c", print_c}, {"s", print_s}, {NULL, NULL}
 	};
-	
-	int i = 0, j = 0, get_index;
 
-	get_index = index;
-	while (pr[i].type_sp)
+	int i = 0, j = 0, first_index;	/*@first_index: first specifier index*/
+
+	first_index = index;
+	while (sp[j].format_sp)
 	{
-		if (s[index] == pr[i].type_sp[j])
+		if (arg_i[index] == sp[j].format_sp[i])
 		{
-			if (pr[i].type_sp[j + 1] != '\0')
-				index++, j++;
+			if (sp[j].format_sp[i + 1] != '\0')
+				index++, i++;
 			else
 				break;
 		}
 		else
 		{
-			j = 0;
-			i++;
-			index = get_index;
+			i = 0;
+			j++;
+			index = first_index;
 		}
 	}
-	return (pr[i].f);
+	return (pr[j].f);
 }
