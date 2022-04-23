@@ -9,11 +9,11 @@
 int _printf(const char *format, ...)
 {
 	unsigned int i = 0, len = 0, ibuf = 0;
-	va_list arguments;
+	va_list ap;	/*@ap: arguments pointer*/
 	int (*function)(va_list, char *, unsigned int);
 	char *buffer;
 
-	va_start(arguments, format), buffer = malloc(sizeof(char) * 1024);
+	va_start(ap, format), buffer = malloc(sizeof(char) * 1024);
 	if (!format || !buffer || (format[i] == '%' && !format[i + 1]))
 		return (-1);
 	if (!format[i])
@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			if (format[i + 1] == '\0')
-			{	print_buf(buffer, ibuf), free(buffer), va_end(arguments);
+			{	print_buf(buffer, ibuf), free(buffer), va_end(ap);
 				return (-1);
 			}
 			else
@@ -36,8 +36,8 @@ int _printf(const char *format, ...)
 				}
 				else
 				{
-					len += function(arguments, buffer, ibuf);
-					i += even_print_func(format, i + 1);
+					len += function(ap, buffer, ibuf);
+					i += count_sp(format, i + 1);
 				}
 			} i++;
 		}
@@ -46,6 +46,6 @@ int _printf(const char *format, ...)
 		for (ibuf = len; ibuf > 1024; ibuf -= 1024)
 			;
 	}
-	print_buf(buffer, ibuf), free(buffer), va_end(arguments);
+	print_buf(buffer, ibuf), free(buffer), va_end(ap);
 	return (len);
 }
