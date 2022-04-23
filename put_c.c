@@ -1,9 +1,9 @@
 #include "main.h"
 /**
- * print_chr - writes the character c to stdout
- * @arguments: input char
+ * print_c- writes the character c to stdout
+ * @ap: argument pointer to char
  * @buf: buffer pointer
- * @ibuf: index for buffer pointer
+ * @i_buf: index for buffer pointer
  *
  * Return: 1.
  */
