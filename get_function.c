@@ -8,7 +8,8 @@
 int (*get_sp_func(const char *arg_i, int index))(va_list, char *, unsigned int)
 {
 	specifier_f sp[] = {
-		{"c", print_c}, {"s", print_s}, {NULL, NULL}
+		{"c", print_c}, {"s", print_s}, 
+		{"%", print_per}, {NULL, NULL}
 	};
 
 	int i = 0, j = 0, first_index;	/*@first_index: first specifier index*/
