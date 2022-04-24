@@ -9,7 +9,9 @@
 int count_sp(const char *arg_i, int index)
 {
 	specifier_f sp[] = {
-		{"c", print_c}, {"s", print_s}, {NULL, NULL}
+		{"c", print_c}, {"s", print_s},
+		{"d", print_i}, {"i", print_i},
+		{NULL, NULL}
 	};
 	int i = 0, j = 0, first_index;
 

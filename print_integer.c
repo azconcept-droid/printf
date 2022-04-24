@@ -7,18 +7,18 @@
  * @buf_i: index for buffer pointer
  * Return: number of chars printed.
  */
-int print_int(va_list ap, char *buf, unsigned int buf_i)
+int print_i(va_list ap, char *buf, unsigned int buf_i)
 {
 	int int_input;
-	unsigned int int_in, int_temp, i, div, isneg;
+	unsigned int int_temp, int_in, is_neg, i, div;
 
 	int_input = va_arg(ap, int);
-	isneg = 0;
+	is_neg = 0;
 	if (int_input < 0)
 	{
 		int_in = int_input * -1;
 		buf_i = control_buf(buf, '-', buf_i);
-		isneg = 1;
+		is_neg = 1;
 	}
 	else
 	{
@@ -38,5 +38,5 @@ int print_int(va_list ap, char *buf, unsigned int buf_i)
 	{
 		buf_i = control_buf(buf, ((int_in / div) % 10) + '0', buf_i);
 	}
-	return (i + isneg);
+	return (i + is_neg);
 }
