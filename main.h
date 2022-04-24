@@ -25,4 +25,5 @@ int print_buf(char *buf, unsigned int nbyte);
 unsigned int control_buf(char *buf, char c, unsigned int buf_i);
 int (*get_sp_func(const char *s, int index))(va_list, char *, unsigned int);
 int count_sp(const char *arg_i, int index);
+char *fill_binary(char *binary, long int int_in, int isneg, int limit);
 #endif
