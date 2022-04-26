@@ -30,7 +30,7 @@ int print_usr(va_list arguments, char *buf, unsigned int ibuf)
 			sum += 3;
 		}
 		else
-			ibuf = handl_buf(buf, str[i], ibuf);
+			ibuf = control_buf(buf, str[i], ibuf);
 	}
 	free(binary);
 	free(hexadecimal);

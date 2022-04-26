@@ -20,7 +20,7 @@ int print_unt(va_list arguments, char *buf, unsigned int ibuf)
 		int_temp /= 10;
 	}
 	for (i = 0; div > 0; div /= 10, i++)
-		ibuf = handl_buf(buf, ((int_in / div) % 10) + '0', ibuf);
+		ibuf = control_buf(buf, ((int_in / div) % 10) + '0', ibuf);
 
 	return (i);
 }
