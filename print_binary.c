@@ -16,6 +16,11 @@ int print_bnr(va_list ap, char *buf, unsigned int buf_i)
 	is_negative = 0;
 	if (int_input == 0)
 	{
+		buf_i = control_buf(buf, '0', buf_i);
+		return (1);
+	}
+	if (int_input < 0)
+	{
 		int_input = (int_input * -1) - 1;
 		is_negative = 1;
 	}
