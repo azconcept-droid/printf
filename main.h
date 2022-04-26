@@ -22,9 +22,12 @@ int print_s(va_list ap, char *buf, unsigned int buf_i);
 int print_i(va_list ap, char *buf, unsigned int buf_i);
 int print_per(va_list a __attribute__((unused)), char *buf, unsigned int i);
 int print_bnr(va_list ap, char *buf, unsigned int buf_i);
+char *fill_hex(char *bnr, char *hex, int isupp, int limit);
+char *fill_oct(char *bnr, char *oct);
 int print_buf(char *buf, unsigned int nbyte);
 unsigned int control_buf(char *buf, char c, unsigned int buf_i);
 int (*get_sp_func(const char *s, int index))(va_list, char *, unsigned int);
 int count_sp(const char *arg_i, int index);
 char *fill_binary(char *binary, long int int_in, int isneg, int limit);
+
 #endif
