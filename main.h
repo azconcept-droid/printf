@@ -22,6 +22,8 @@ int print_s(va_list ap, char *buf, unsigned int buf_i);
 int print_i(va_list ap, char *buf, unsigned int buf_i);
 int print_per(va_list a __attribute__((unused)), char *buf, unsigned int i);
 int print_bnr(va_list ap, char *buf, unsigned int buf_i);
+int print_hex(va_list arguments, char *buf, unsigned int ibuf);
+int print_oct(va_list arguments, char *buf, unsigned int ibuf);
 char *fill_hex(char *bnr, char *hex, int isupp, int limit);
 char *fill_oct(char *bnr, char *oct);
 int print_buf(char *buf, unsigned int nbyte);
