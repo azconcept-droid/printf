@@ -11,8 +11,9 @@ int (*get_sp_func(const char *arg_i, int index))(va_list, char *, unsigned int)
 		{"c", print_c}, {"s", print_s},
 		{"%", print_per}, {"d", print_i},
 		{"i", print_i}, {"b", print_bnr},
-		{"o", print_oct}, {"x", print_hex},
-		{NULL, NULL}
+		{"u", print_unt}, {"o", print_oct},
+		{"x", print_hex}, {"X", print_upx},
+		{"S", print_usr}, {NULL, NULL}
 	};
 
 	int i = 0, j = 0, first_index;	/*@first_index: first specifier index*/
