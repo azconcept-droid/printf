@@ -1,6 +1,6 @@
 #include "main.h"
 
-/**
+/***
  * print_oct - prints decimal number in octal
  * @arguments: input number
  * @buf: buffer pointer
