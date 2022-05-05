@@ -1,5 +1,5 @@
 #include "main.h"
-/**
+/***
  * print_s - writes the string to stdout
  * @ap: argument pointer
  * @buf: buffer pointer
